@@ -78,10 +78,10 @@ def inferensi(kekentalan, asam, manis, aroma, aftertaste):
     ]
     
     z = [
-        20 + (rule["alpha"] * 30) if rule["out"] == "rendah" else  # 20 hingga 50
-        50 + (rule["alpha"] * 35) if rule["out"] == "sedang" else  # 50 hingga 85
-        85 + (rule["alpha"] * 15) if rule["out"] == "tinggi" else  # 85 hingga 100
-        100 for rule in rules  # 100 untuk "sangat tinggi"
+        20 + (rule["alpha"] * 30) if rule["out"] == "rendah" else
+        50 + (rule["alpha"] * 70) if rule["out"] == "sedang" else
+        85 + (rule["alpha"] * 15) if rule["out"] == "tinggi" else
+        100 for rule in rules
     ]
     
     kualitas = defuzzify(rules, z)
